@@ -1,11 +1,11 @@
 version: '3.8'
 services:
-  ffc-pay-settlement-to-postgres:
+  ffc-pay-settlement-to-return-file:
     build:
       context: .
       target: production
-    image: ffc-pay-settlement-to-postgres
-    container_name: ffc-pay-settlement-to-postgres
+    image: ffc-pay-settlement-to-return-file
+    container_name: ffc-pay-settlement-to-return-file
     volumes:
       - ./input:/home/node/input
       - ./output:/home/node/output

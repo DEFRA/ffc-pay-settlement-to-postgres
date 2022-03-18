@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  ffc-pay-settlement-to-postgres:
+  ffc-pay-settlement-to-return-file:
     build:
       context: .
       target: development

@@ -1,24 +1,26 @@
 const path = require('path')
 const fs = require('fs').promises
 const INPUT_DIRECTORY = path.join(__dirname, '..', 'input')
+const XLSX = require('xlsx')
 
 const getExcelFiles = async () => {
-  const csvFiles = []
+  const excelFiles = []
 
   const directory = await fs.readdir(INPUT_DIRECTORY)
 
   directory.filter(file => {
-    return (file.indexOf('.') !== 0) && (file.slice(-4) === '.csv')
+    return (file.indexOf('.') !== 0) && (file.slice(-5) === '.xlsx')
   }).forEach(file => {
-    csvFiles.push({ path: path.resolve(INPUT_DIRECTORY, file), name: file.replace('.csv', '') })
+    excelFiles.push({ path: path.resolve(INPUT_DIRECTORY, file), name: file.replace('.xlsx', '') })
   })
-
-  return csvFiles
+  return excelFiles
 }
 
 const getExcelData = async (filepath) => {
-  const buffer = await fs.readFile(filepath)
-  return buffer.toString().trim().replace(/\r/g, '').split('\n').map(x => x.split(','))
+  const workbook = XLSX.readFile(filepath)
+  const sheetNames = workbook.SheetNames
+  const worksheet = sheetNames[0]
+  return XLSX.utils.sheet_to_json(workbook.Sheets[worksheet], { raw: false, header: 1 })
 }
 
 module.exports = {

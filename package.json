@@ -1,5 +1,5 @@
 {
-  "name": "ffc-pay-settlement-to-postgres",
+  "name": "ffc-pay-settlement-to-return-file",
   "version": "1.0.0",
   "description": "Convert Settlement reports to PostgreSQL insert script",
   "main": "app/index.js",
@@ -9,16 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnwatson484/ffc-pay-settlement-to-postgresql.git"
+    "url": "git+https://github.com/johnwatson484/ffc-pay-settlement-to-return-fileql.git"
   },
   "author": "John Watson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/johnwatson484/ffc-pay-settlement-to-postgresql/issues"
+    "url": "https://github.com/johnwatson484/ffc-pay-settlement-to-return-fileql/issues"
   },
-  "homepage": "https://github.com/johnwatson484/ffc-pay-settlement-to-postgresql#readme",
+  "homepage": "https://github.com/johnwatson484/ffc-pay-settlement-to-return-fileql#readme",
   "devDependencies": {
     "nodemon": "^2.0.4",
     "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.4"
   }
 }

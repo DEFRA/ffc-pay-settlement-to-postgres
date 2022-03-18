@@ -1,5 +1,5 @@
-# Settlement reports to PostgreSQL
-Convert DAX Excel settlement reports to PostgreSQL insert scripts to support tactical payment service migration.
+# Settlement reports to return file
+Convert DAX Excel settlement reports to return file to support tactical payment service migration.
 
 ## Prerequisites
 - Node 16+
@@ -22,7 +22,7 @@ mkdir -p ./output
 
 3. run application with `node app/index.js`
 
-4. generated scripts are written to `output` folder
+4. generated return file is written to `output` folder
 
 ### Docker
 To avoid the need for Node installation this application can also be run using Docker Compose.
