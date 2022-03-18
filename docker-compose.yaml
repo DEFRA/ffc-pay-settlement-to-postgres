@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  ffc-pay-settlement-to-postgres:
+    build:
+      context: .
+      target: production
+    image: ffc-pay-settlement-to-postgres
+    container_name: ffc-pay-settlement-to-postgres
+    volumes:
+      - ./input:/home/node/input
+      - ./output:/home/node/output
