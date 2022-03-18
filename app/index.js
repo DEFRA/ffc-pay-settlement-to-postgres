@@ -10,7 +10,7 @@ const convertSettlementToPostgreSql = async () => {
     const data = await getExcelData(excelFile.path)
     const lines = data.slice(1)
     lines.forEach(line => {
-      content = content.concat(`SITIAgri,${line[3]},${line[1]},legacy,01-MAY-22,S,${line[5]},${moment(line[0], ['MM/DD/YYYY']).format('YYYY-MM-DD')},UNKNOWN,D,\n`)
+      content = content.concat(`SITIAgri,${line[3]},${line[1]},legacy,01-MAY-22,S,${line[5]},${moment(line[0], ['MM/DD/YYYY']).format('YYYY-MM-DD')},UNKNOWN,D,\r\n`)
     })
   }
   await generateReturnFile(content)
